@@ -1,0 +1,14 @@
+/* CSS file */
+.labelFormItem{
+	fontSize: 14;
+	color: #FFFFFF;
+	fontFamily: myriadPro;
+}
+
+.alertBox{
+	backgroundColor: #AE1729;
+	borderColor:#AE1729;
+	backgroundAlpha: 0.9;
+	borderAlpha: 0.9;	
+	font-weight:bold;
+}

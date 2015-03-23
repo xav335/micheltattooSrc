@@ -1,0 +1,30 @@
+CACHE MANIFEST
+#rev 0.4
+
+CACHE:
+js/ios-orientationchange-fix.js
+js/jqtouch-jquery.min.js
+js/jqtouch.css
+js/jqtouch.min.js
+js/jquery-1.7.min.js
+js/scripts.js
+js/swipe.js
+fonts/28daysla.eot
+fonts/28daysla.svg
+fonts/28daysla.ttf
+fonts/28daysla.woff
+fonts/itcavantgardestd-bkcn.eot
+fonts/itcavantgardestd-bkcn.svg
+fonts/itcavantgardestd-bkcn.ttf
+fonts/itcavantgardestd-bkcn.woff
+img/autoclave.jpg
+img/logo.svg
+img/michel.jpg
+style.css
+mt_startup.png
+mt.png
+mt4.png
+index.php
+
+NETWORK:
+http://www.micheltattoo.com/mobile/

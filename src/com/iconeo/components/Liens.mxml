@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Canvas xmlns:mx="http://www.adobe.com/2006/mxml"
+	 backgroundColor="#FFFFFF" backgroundAlpha="0.5" width="686" height="373" xmlns:local="*" xmlns:tools="com.iconeo.tools.*">
+		<mx:Script>
+			<![CDATA[
+				import flash.net.navigateToURL;
+			]]>
+		</mx:Script>
+		<tools:SmoothImage x="352" y="44" source="../images/mt_lien_tattoolife.png"
+			rotation="10"
+			rollOverEffect="glowIn" rollOutEffect="glowOut"
+			useHandCursor="true" buttonMode="true" mouseChildren="false"
+			click="navigateToURL(new URLRequest('http://www.tattoolife.com/'));"/>
+		<tools:SmoothImage x="37" y="221" source="../images/mt_lien_michelspace.png"
+			rotation="-5"
+			rollOverEffect="glowIn" rollOutEffect="glowOut"
+			useHandCursor="true" buttonMode="true" mouseChildren="false"
+			click="navigateToURL(new URLRequest('http://www.myspace.com/micheltattoofamily'));"/>
+		<tools:SmoothImage x="37" y="112" source="../images/mt_lien_thomasspace.png"
+			rotation="-20"
+			rollOverEffect="glowIn" rollOutEffect="glowOut"
+			useHandCursor="true" buttonMode="true" mouseChildren="false"
+			click="navigateToURL(new URLRequest('http://www.myspace.com/lafrenchkonnection'));"/>
+		<tools:SmoothImage x="352" y="242" source="../images/mt_lien_piercingspace.png"
+			rotation="-2"
+			rollOverEffect="glowIn" rollOutEffect="glowOut"
+			useHandCursor="true" buttonMode="true" mouseChildren="false"
+			click="navigateToURL(new URLRequest('http://www.myspace.com/madisonpiercing'));"/>
+		
+		
+		
+		
+		
+		
+		
+		
+		<mx:Glow id="glowIn" duration="200" alphaFrom="0" alphaTo="1"
+			blurXFrom="0" blurXTo="20" blurYFrom="0" blurYTo="20" color="0xFFFFFF"/>
+		<mx:Glow id="glowOut" duration="200" alphaFrom="1" alphaTo="0"
+			blurXFrom="20" blurXTo="0" blurYFrom="20" blurYTo="0" color="0xFFFFFF"/>
+
+</mx:Canvas>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Canvas xmlns:mx="http://www.adobe.com/2006/mxml">
+	<mx:TileList id="listeVignettes" width="100%" height="100%"
+		itemRenderer="com.iconeo.renderers.VignetteRenderer"
+		backgroundColor="#000000"
+		rollOverColor="#D33043" selectionColor="#AE1729"
+		backgroundAlpha="0.3"
+		itemClick="handleClick(event)"/>
+	
+	<mx:Script>
+		<![CDATA[
+			import com.iconeo.events.GalerieEvent;
+			import mx.events.ListEvent;
+			import mx.collections.ArrayCollection;
+			import com.iconeo.remote.RemoteService;
+			
+			[Bindable]
+			public var accesEnCours:Boolean = false;
+			
+			[Bindable]
+			private var _listeAnimations:Array;
+			[Bindable]
+			private var _idCategorie:Number;
+			
+			public function set idCategorie(idCategorie:Number):void{
+				_idCategorie = idCategorie;
+				
+				initiatiserListe();
+				accesEnCours = true;
+			}
+			
+			[Bindable]
+			public function get idCategorie():Number{
+				return _idCategorie;
+			}
+			
+			private function initiatiserListe(e:TimerEvent=null):void{
+				if(RemoteService.initDone){
+					trace("OKOKOKOKOKOKOK")
+					RemoteService.recupererListeCategorie(_idCategorie, handleListeCategorie);
+				} else {
+					trace("PAS PRET PAS PRET PAS PRET PAS PRET ")
+					var t:Timer = new Timer(100, 1);
+					t.addEventListener(TimerEvent.TIMER, initiatiserListe);
+					t.start();
+				}
+			}
+
+			
+			public function handleListeCategorie(e:Object):void{
+				_listeAnimations = e as Array;
+				listeVignettes.dataProvider = new ArrayCollection(_listeAnimations);
+				trace("ola");
+				accesEnCours = false;
+			}
+			
+			private function handleClick(e:ListEvent):void{
+				trace("Item cliqué");
+				var event:GalerieEvent = new GalerieEvent(GalerieEvent.AFFICHAGE_MEDIA);
+				var item:* = listeVignettes.selectedItem;
+				if(item.fichierApercu != null) {
+					event.urlMedia = item.fichierApercu;
+				} else {
+					event.urlMedia = item.fichierAnimation;
+				}
+				
+				dispatchEvent(event);
+			}
+
+		]]>
+	</mx:Script>
+</mx:Canvas>
